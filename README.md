@@ -23,7 +23,7 @@ We distinguish the following main concepts:
 - **ScoringAlgorithm**: Piece of code that contextualises the sum of all test results for a given benchmark, into a final quantitative assessment result. 
 - **BenchmarkScore**: Score obtained after executing a scoring algorithm over a set of test results. The benchmark score includes a value, a log and a link to the test results used to obtain the score.
 
-![diagram](./development/img/FAIRTestResult_diagram_v12.drawio.png "FTR overview")
+![diagram](./development/img/FAIRTestResult_diagram_v13.drawio.png "FTR overview")
 
 ## Examples
 Please see the [latest specification draft for examples](https://w3id.org/ftr#desc). The FTR specification has been implemented through two different implementations: 
