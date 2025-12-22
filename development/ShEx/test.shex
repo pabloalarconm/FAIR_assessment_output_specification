@@ -26,24 +26,25 @@ PREFIX dpv: <https://w3id.org/dpv#>
 }
 
 :testShape IRI {
-   a [ftr:Test dcat:DataService]+ ;
+   a [ ftr:Test ] ;
+   a [ dcat:DataService ] ? ;
    dcterms:identifier xsd:string ;
    dcterms:title LITERAL;
    dcterms:description LITERAL ;
    dcat:keyword LITERAL * ;
    vivo:abbreviation LITERAL * ;
-   dqv:inDimension IRI * ;
    dcat:endpointDescription IRI ? ;
    dcat:endpointURL IRI ? ;
    doap:repository IRI ? ;
-   dcterms:type IRI ? ;
+   dcterms:type IRI * ;
    dcterms:license IRI ;
 	ftr:applicationArea  IRI * ;
    dcat:version LITERAL ;
-   adms:versionNotes LITERAL  ? ;
-   ftr:status LITERAL * ;
+   adms:versionNotes LITERAL ? ;
+   ftr:status LITERAL ? ;
    dcat:contactPoint @:organizationShape or @:individualShape + ;
-   dcterms:creator @:organizationShape or @:individualShape or IRI + ;
+   dcterms:creator @:organizationShape or @:individualShape * ;
+	dcat:publisher @:organizationShape or @:individualShape * ;
    sio:SIO_000233 @:metricShape ;
    ftr:supportedBy IRI * ;
 	dpv:isApplicableFor IRI *

@@ -41,7 +41,13 @@ PREFIX dpv: <https://w3id.org/dpv#>
 	ftr:applicationArea  IRI * ;
 	ftr:status LITERAL * ;
 	ftr:hasAssociatedMetric  @:metricShape + ;
-    dcat:contactPoint @:organizationShape or @:individualShape * ;
+    dcat:contactPoint @:organizationShape or @:individualShape + ;
     dcterms:creator @:organizationShape or @:individualShape * ;
-	ftr:scoringAlgorithm IRI *
+	dcat:publisher @:organizationShape or @:individualShape * ;
+	sio:SIO_000234 @:scoringAlgorithmShape * ;
+}
+
+:scoringAlgorithmShape IRI {
+    a [ ftr:ScoringAlgorithm ] ;
+    a [ dcat:DataService ] ? ;
 }

@@ -5,7 +5,9 @@
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix sio: <http://semanticscience.org/resource/> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix adms: <http://www.w3.org/ns/adms#> .
 @prefix vivo: <http://vivoweb.org/ontology/core#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
 @prefix dqv: <http://www.w3.org/ns/dqv#> .
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -19,7 +21,6 @@
     sh:property [
         sh:path vcard:organization-name ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
 
@@ -31,21 +32,35 @@
     sh:property [
         sh:path vcard:fn ;
         sh:datatype xsd:string ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path vcard:hasEmail ;
         sh:nodeKind sh:IRI ;
-        sh:minCount 1 ;
         sh:maxCount 1 ;
     ] .
 
-:MetricShape
+:BenchmarkShape
     a sh:NodeShape ;
     sh:nodeKind sh:IRI ;
-    sh:class dqv:Metric .
+    sh:class ftr:Benchmark .
+
+:TestShape
+    a sh:NodeShape ;
+    sh:nodeKind sh:IRI ;
+
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue ftr:Test ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path rdf:type ;
+        sh:hasValue dcat:DataService ;
+        sh:maxCount 1 ;
+    ] .
 
 :ScoringAlgorithmShape
     a sh:NodeShape ;
@@ -61,12 +76,7 @@
         sh:path rdf:type ;
         sh:hasValue dcat:DataService ;
         sh:maxCount 1 ;
-    ] .
-
-:BenchmarkShape
-    a sh:NodeShape ;
-    sh:nodeKind sh:IRI ;
-    sh:class ftr:Benchmark ;
+    ] ;
 
     sh:property [
         sh:path dcterms:identifier ;
@@ -100,7 +110,37 @@
     ] ;
 
     sh:property [
-        sh:path dcat:landingPage ;
+        sh:path dcat:endpointDescription ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path dcat:endpointURL ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path doap:repository ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path dcterms:type ;
+        sh:nodeKind sh:IRI ;
+    ] ;
+
+    sh:property [
+        sh:path dcterms:license ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ftr:applicationArea ;
         sh:nodeKind sh:IRI ;
     ] ;
 
@@ -112,19 +152,15 @@
     ] ;
 
     sh:property [
-        sh:path ftr:applicationArea ;
-        sh:nodeKind sh:IRI ;
+        sh:path adms:versionNotes ;
+        sh:datatype xsd:string ;
+        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path ftr:status ;
         sh:datatype xsd:string ;
-    ] ;
-
-    sh:property [
-        sh:path ftr:hasAssociatedMetric ;
-        sh:node :MetricShape ;
-        sh:minCount 1 ;
+        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -153,6 +189,20 @@
     ] ;
 
     sh:property [
-        sh:path sio:SIO_000234 ;
-        sh:node :ScoringAlgorithmShape ;
+        sh:path sio:SIO_000233 ;
+        sh:node :BenchmarkShape ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ftr:invokesTest ;
+        sh:node :TestShape ;
+        sh:minCount 1 ;
+    ] ;
+
+    sh:property [
+        sh:path ftr:scoringFunction ;
+        sh:nodeKind sh:IRI ;
+        sh:maxCount 1 ;
     ] .
