@@ -15,13 +15,13 @@ PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
 PREFIX dpv: <https://w3id.org/dpv#>
 
 :organizationShape IRI {
-   vcard:organization-name LITERAL ? ;
+   vcard:organization-name LITERAL * ;
    a [vcard:Organization] ;
 }
 
 :individualShape IRI {
-   vcard:fn LITERAL ? ;
-   vcard:hasEmail IRI ? ;
+   vcard:fn LITERAL * ;
+   vcard:hasEmail IRI * ;
    a [vcard:Individual] ;
 }
 

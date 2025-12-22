@@ -21,7 +21,6 @@
     sh:property [
         sh:path vcard:organization-name ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] .
 
 :IndividualShape
@@ -32,13 +31,11 @@
     sh:property [
         sh:path vcard:fn ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path vcard:hasEmail ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] .
 
 :BenchmarkShape
@@ -59,7 +56,6 @@
     sh:property [
         sh:path rdf:type ;
         sh:hasValue dcat:DataService ;
-        sh:maxCount 1 ;
     ] .
 
 :ScoringAlgorithmShape
@@ -75,21 +71,18 @@
     sh:property [
         sh:path rdf:type ;
         sh:hasValue dcat:DataService ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcterms:identifier ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcterms:title ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -111,19 +104,16 @@
     sh:property [
         sh:path dcat:endpointDescription ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcat:endpointURL ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path doap:repository ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -135,7 +125,6 @@
         sh:path dcterms:license ;
         sh:nodeKind sh:IRI ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -153,7 +142,6 @@
     sh:property [
         sh:path adms:versionNotes ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -191,7 +179,6 @@
         sh:path sio:SIO_000233 ;
         sh:node :BenchmarkShape ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -203,5 +190,4 @@
     sh:property [
         sh:path ftr:scoringFunction ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] .

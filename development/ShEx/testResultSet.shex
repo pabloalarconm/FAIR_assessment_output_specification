@@ -31,7 +31,7 @@ PREFIX dpv: <https://w3id.org/dpv#>
 
 :entityShape IRI {
    a [ prov:Entity ] ;
-   dcterms:identifier xsd:string ? ;
+   dcterms:identifier xsd:string * ;
 }
 
 :testResultShape IRI {
@@ -46,7 +46,7 @@ PREFIX dpv: <https://w3id.org/dpv#>
    ftr:affectedElements IRI * ;
    ftr:outputFromTest @:testShape ;
    ftr:assessmentTarget @:entityShape ;
-   prov:wasGeneratedBy @:testExecutionActivityShape ? ;
+   prov:wasGeneratedBy @:testExecutionActivityShape * ;
    ftr:suggestion @:guidanceShape +
 }
 

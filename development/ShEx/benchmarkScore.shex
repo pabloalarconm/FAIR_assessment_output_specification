@@ -20,7 +20,7 @@ PREFIX dpv: <https://w3id.org/dpv#>
     ftr:log LITERAL ;
     ftr:outputFromAlgorithm @:scoringAlgorithmShape ;
     ftr:scoredTestResults @:testResultSetShape + ;
-    prov:wasGeneratedBy @:scoringAlgorithmActivityShape ?
+    prov:wasGeneratedBy @:scoringAlgorithmActivityShape *
 }
 
 :scoringAlgorithmShape IRI {

@@ -37,7 +37,6 @@
         sh:path ftr:outputFromAlgorithm ;
         sh:node :ScoringAlgorithmShape ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -49,7 +48,6 @@
     sh:property [
         sh:path prov:wasGeneratedBy ;
         sh:node :ScoringAlgorithmActivityShape ;
-        sh:maxCount 1 ;
     ] .
 
 :ScoringAlgorithmShape
@@ -65,7 +63,6 @@
     sh:property [
         sh:path rdf:type ;
         sh:hasValue dcat:DataService ;
-        sh:maxCount 1 ;
     ] .
 
 :TestResultSetShape

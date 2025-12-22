@@ -27,7 +27,6 @@
     sh:property [
         sh:path rdf:type ;
         sh:hasValue dcat:DataService ;
-        sh:maxCount 1 ;
     ] .
 
 :EntityShape
@@ -38,7 +37,6 @@
     sh:property [
         sh:path dcterms:identifier ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] .
 
 :TestResultShape
@@ -50,14 +48,12 @@
         sh:path dcterms:identifier ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcterms:title ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -70,7 +66,6 @@
         sh:path dcterms:license ;
         sh:nodeKind sh:IRI ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -101,20 +96,17 @@
         sh:path ftr:outputFromTest ;
         sh:node :TestShape ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path ftr:assessmentTarget ;
         sh:node :EntityShape ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path prov:wasGeneratedBy ;
         sh:node :TestExecutionActivityShape ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -131,7 +123,6 @@
     sh:property [
         sh:path prov:used ;
         sh:node :EntityShape ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
@@ -143,7 +134,6 @@
         sh:path prov:endedAtTime ;
         sh:datatype xsd:dateTime ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] .
 
 :GuidanceShape
@@ -155,18 +145,15 @@
         sh:path dcterms:title ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcterms:description ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path sio:SIO_000339 ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] .

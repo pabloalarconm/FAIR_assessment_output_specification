@@ -20,7 +20,6 @@
     sh:property [
         sh:path vcard:organization-name ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] .
 
 :IndividualShape
@@ -31,13 +30,11 @@
     sh:property [
         sh:path vcard:fn ;
         sh:datatype xsd:string ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path vcard:hasEmail ;
         sh:nodeKind sh:IRI ;
-        sh:maxCount 1 ;
     ] .
 
 :BenchmarkShape
@@ -64,14 +61,12 @@
         sh:path dcterms:identifier ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
         sh:path dcterms:title ;
         sh:datatype xsd:string ;
         sh:minCount 1 ;
-        sh:maxCount 1 ;
     ] ;
 
     sh:property [
